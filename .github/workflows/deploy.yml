@@ -68,6 +68,9 @@ jobs:
             ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        env:
+          ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+          SPACE_ID: ${{secrets.SPACE_ID}}
       - name: Build & Deploy with Gatsby
         uses: enriikke/gatsby-gh-pages-action@v2
         env:
