@@ -78,6 +78,7 @@ jobs:
         uses: enriikke/gatsby-gh-pages-action@v2
         env:
           ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           SPACE_ID: ${{secrets.SPACE_ID}}
-          PUBLIC_DIR: public
+        with:
+          access-token: x-access-token:${{ secrets.GH_TOKEN }}
+          deploy-branch: main
