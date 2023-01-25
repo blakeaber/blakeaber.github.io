@@ -74,11 +74,15 @@ jobs:
         env:
           ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
           SPACE_ID: ${{secrets.SPACE_ID}}
-      - name: Build & Deploy with Gatsby
-        uses: enriikke/gatsby-gh-pages-action@v2
+      - name: Build Gatsby
+        run: npm run build
         env:
           ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
           SPACE_ID: ${{secrets.SPACE_ID}}
+
+      - name: Deploy Gatsby
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          access-token: x-access-token:${{ secrets.GH_TOKEN }}
-          deploy-branch: main
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./public
