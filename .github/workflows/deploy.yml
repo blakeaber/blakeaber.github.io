@@ -55,6 +55,9 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v2
+        env:
+          ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+          SPACE_ID: ${{secrets.SPACE_ID}}
         with:
           static_site_generator: gatsby
       - name: Restore cache
