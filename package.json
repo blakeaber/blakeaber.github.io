@@ -7,7 +7,7 @@
     "start": "env-cmd --silent gatsby develop",
     "serve": "env-cmd --silent gatsby serve",
     "build": "env-cmd --silent gatsby build",
-    "deploy": "gh-pages -d public -b main",
+    "deploy": "gh-pages -d public -b deploy",
     "clean": "gatsby clean"
   },
   "repository": {
