@@ -80,5 +80,5 @@ jobs:
           ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
           SPACE_ID: ${{secrets.SPACE_ID}}
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          access-token: ${{ secrets.GH_TOKEN }}
           deploy-branch: gh-pages
