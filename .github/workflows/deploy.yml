@@ -81,4 +81,4 @@ jobs:
           SPACE_ID: ${{secrets.SPACE_ID}}
         with:
           access-token: ${{ secrets.GH_TOKEN }}
-          deploy-branch: gh-pages
+          deploy-branch: main
