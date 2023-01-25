@@ -1,9 +1,9 @@
-name: main
+name: deploy
 
 on:
   push:
     branches:
-      - main
+      - deploy
   repository_dispatch:
     types: [contentful.deploy]
 
